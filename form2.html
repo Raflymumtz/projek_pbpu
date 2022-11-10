@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <h2>Form Saya</h2>
+
+    <form action="/action_page.php" id="form">
+        <label for="fname">First name:</label><br>
+        <input type="text" id="fname"><br>
+        <label for="lname">Last name:</label><br>
+        <input type="text" id="lname"><br><br>
+        <input type="submit">
+    </form>
+
+    <form action="proses.php" method="POST" enctype="multipart/form-data">
+    <script>
+        
+        const form = document.getElementById('form');
+        const firstName = document.getElementById('fname');
+        const lastName = document.getElementById('lname');
+
+        form.addEventListener('submit', function(func) {
+            func.preventDefault();
+
+            const firstNameValue = firstName.value;
+            const lastNameValue = lastName.value;
+
+            localStorage.setItem('first_name', firstNameValue);
+            localStorage.setItem('last_name', lastNameValue);
+
+            window.location.href = 'index2.html';
+        });
+    </script>
+</body>

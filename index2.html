@@ -1,0 +1,25 @@
+</html>
+<!DOCTYPE html>
+<html>
+
+<body>
+    <h2>Form ke dua saya</h2>
+
+    <label for="fname">First name:</label><br>
+    <label id="first"></label><br>
+    <label for="lname">Last name:</label><br>
+    <label for="last"></label><br>
+
+    <script>
+        const firstName = localStorage.getItem('first_name');
+        const lastName = localStorage.getItem('last_name');
+
+        console.log(firstName);
+        console.log(lastName);
+
+        document.getElementById('first').textContent = firstName;
+        document.getElementById('last').textContent = lastName;
+    </script>
+</body>
+
+</html>
