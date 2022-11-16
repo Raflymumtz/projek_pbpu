@@ -75,7 +75,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					</li>
 					<li><a href="datapribadi.html"><span class="glyphicon glyphicon-file" aria-hidden="true"></span>Data
 							Pribadi</a></li>
-					<li><a href="riwayatpekerjaan2.html"><span class="glyphicon glyphicon-file"
+					<li><a href="riwayatpekerjaan.html"><span class="glyphicon glyphicon-file"
 								aria-hidden="true"></span>Riwayat Pekerjaan</a></li>
 					<li><a href="#"><span class="glyphicon glyphicon-print" aria-hidden="true"></span>Print CV</a></li>
 					<li><a href="fotoupload.html"><span class="glyphicon glyphicon-picture"
@@ -108,37 +108,45 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 			<div class="company">
 				<h3 class="clr1">Riwayat Pekerjaan</h3>
-				<div class="company_details">
-					<h2><b><span id="namaperusahaan"></span></b>	<small><span id="masakerja"></span></small></h2>
-					<h4><span id="posisikerja"></span></h4>
-					<h6><p class="cmpny1" id="deskripsipekerjaan"></p></h6>
-				</div>
-				<div class="company_details">
-					<h4>Company Name <span>NOVEMBER 2007 - MAY 2009</span></h4>
-					<h6>WEB DESIGNER</h6>
-					<p>Nulla volutpat at est sed ultricies. In ac sem consequat, posuere nulla varius, molestie lorem.
-						Duis quis nibh leo.
-						Curabitur a quam eu mi convallis auctor nec id mauris. Nullam mattis turpis eu turpis tincidunt,
-						et pellentesque leo imperdiet.
-						Vivamus malesuada, sem laoreet dictum pulvinar, orci lectus rhoncus sapien, ut consectetur augue
-						nibh in neque. In tincidunt sed enim et tincidunt.</p>
-				</div>
 			</div>
+
 			<script>
-				const namaperusahaan = localStorage.getItem('namaperusahaan');
-				const masakerja = localStorage.getItem('masakerja');
-				const posisikerja = localStorage.getItem('posisikerja');
-				const deskripsipekerjaan = localStorage.getItem('deskripsipekerjaan');
+				$(document).ready(function () {
+					const jmlPekerjaan = localStorage.getItem("jmlPekerjaan");
 
-				console.log(namaperusahaan);
-				console.log(masakerja);
-				console.log(posisikerja);
-				console.log(deskripsipekerjaan);
+					for (var i = 0; i < jmlPekerjaan; i++) {
+						$(".company").after(`
+							<div class="company_details">
+								<h2><b><span id="namaperusahaan"></span></b>	<small><span id="masakerja"></span></small></h2>
+								<h4><span id="posisikerja"></span></h4>
+								<h6><p class="cmpny1" id="deskripsipekerjaan"></p></h6>
+							</div>
+						`);
+						const namaperusahaan =
+							localStorage.getItem("namaperusahaan-" + i);
+						const masakerja = localStorage.getItem("masakerja-" + i);
+						const posisikerja = localStorage.getItem("posisikerja-" + i);
+						const deskripsipekerjaan =
+							localStorage.getItem("deskripsipekerjaan-" + i);
 
-				document.getElementById('namaperusahaan').textContent = namaperusahaan;
-				document.getElementById('masakerja').textContent = masakerja;
-				document.getElementById('posisikerja').textContent = posisikerja;
-				document.getElementById('deskripsipekerjaan').textContent = deskripsipekerjaan;
+						console.log(namaperusahaan);
+						console.log(masakerja);
+						console.log(posisikerja);
+						console.log(deskripsipekerjaan);
+
+						document.getElementById(
+							"namaperusahaan"
+						).textContent = namaperusahaan;
+						document.getElementById("masakerja").textContent =
+							masakerja;
+						document.getElementById(
+							"posisikerja"
+						).textContent = posisikerja;
+						document.getElementById(
+							"deskripsipekerjaan"
+						).textContent = deskripsipekerjaan;
+					}
+				});
 			</script>
 
 			<div class="skills">
