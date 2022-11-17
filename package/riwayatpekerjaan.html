@@ -89,7 +89,7 @@
 					  </form>
 
 				<div class="copy hide">
-					<div class="control-group">
+					<div class="control-group1">
 						<label>Nama Perusahaan</label>
 						<br>
 						<!-- id diganti class -->
@@ -108,8 +108,8 @@
 						<input type="text" value="Deskripsi Pekerjaan" class="form-control deskripsipekerjaan" onfocus="this.value='';"
 						onblur="if (this.value == '') {this.value ='Saya bekerja sebagai CTO dimana bertugas untuk mengatasi semua masalah perusahaan yang berhubungan dengan teknologi........';}">
 						<br>
-					<button class="btn btn-danger remove" type="button"><i class="glyphicon glyphicon-remove"></i> Remove</button>
-							<hr>
+					    <button class="btn btn-danger remove" type="button"><i class="glyphicon glyphicon-remove"></i> Remove</button>
+						<hr>
 					</div>
 				  </div>
 				</div>
@@ -129,7 +129,7 @@
 			});
 				// saat tombol remove dklik control group akan dihapus 
 				$("body").on("click", ".remove", function () {
-					$(this).parents(".control-group").remove();
+					$(this).parents(".control-group1").remove();
 				});
 			});
 		</script>
