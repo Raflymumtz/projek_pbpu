@@ -56,15 +56,31 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		 </div>
 
 		 <div class="company contact-grid">
-			 <h3 class="clr1">Form Data Pribadi</h3>
-            <form action="/action_form.php" id="form">
-					<input type="text" value="Nama" id="nama" onfocus="this.value='';" onblur="if (this.value == '') {this.value ='Contoh : M Rafly Mumtaz';}">
-					<input type="text" value="Nomer Hp" id="phone" onfocus="this.value='';" onblur="if (this.value == '') {this.value ='Contoh : 085806474976';}">
-					<input type="text" value="Email" id="email" onfocus="this.value='';" onblur="if (this.value == '') {this.value ='Contoh : raflymumtaz23@gmail.com';}">				
-					<input type="text" value="Alamat Lengkap" id="alamat" onfocus="this.value='';" onblur="if (this.value == '') {this.value ='Contoh : Jalan Menuju Kebenaran';}">							
+			<div class="control-group">
+				<h2>Form Data Pribadi</h2>
+            	<form action="/action_form.php" id="form">
+					<div class="control-group after-add-more">
+					<label>Nama</label>
+					<br>
+					<input type="text" value="Nama" class="form-control nama" id="nama" onfocus="this.value='';" onblur="if (this.value == '') {this.value ='Contoh : M Rafly Mumtaz';}">
+					<br>
+					<label>Nomor Hp</label>
+					<br>
+					<input type="text" value="Nomor Hp" class="form-control nomorhp" id="phone" onfocus="this.value='';" onblur="if (this.value == '') {this.value ='Contoh : 085806474976';}">
+					<br>
+					<label>Email</label>
+					<br>
+					<input type="text" value="Email" class="form-control email" id="email" onfocus="this.value='';" onblur="if (this.value == '') {this.value ='Contoh : raflymumtaz23@gmail.com';}">				
+					<br>
+					<label>Alamat Lengkap</label>
+					<br>
+					<input type="text" value="Alamat Lengkap" class="form-control alamat" id="alamat" onfocus="this.value='';" onblur="if (this.value == '') {this.value ='Contoh : Jalan Menuju Kebenaran';}">							
+					<hr>
+				</div>
 					<div class="send">
 						<input type="submit" value="Kirim" >   <button onclick="document.getElementById('datapribadi').value = ''">Hapus Data</button>
 					</div>
+				</div>
 			</form>
 
 
