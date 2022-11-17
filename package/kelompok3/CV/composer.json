@@ -1,0 +1,17 @@
+{
+    "name": "rafly/cv",
+    "description": "Package untuk membuat CV beserta Form Isian, Upload Foto ke HTML lalu ditampilkan, tanpa database (disimpan di localStorage), lalu bisa di print",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "Rafly\\Cv\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Rafly Mumtaz",
+            "email": "raflymumtaz23@gmail.com"
+        }
+    ],
+    "require": {}
+}
