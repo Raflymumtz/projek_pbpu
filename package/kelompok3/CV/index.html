@@ -74,6 +74,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<li><a href="index.html"><span class="glyphicon glyphicon-file" aria-hidden="true"></span>Resume</a></li>
 					<li><a href="datapribadi.html"><span class="glyphicon glyphicon-file" aria-hidden="true"></span>Data Pribadi</a></li>
 					<li><a href="riwayatpekerjaan.html"><span class="glyphicon glyphicon-file"aria-hidden="true"></span>Riwayat Pekerjaan</a></li>
+					<li><a href="skill.html"><span class="glyphicon glyphicon-file"aria-hidden="true"></span>Professional Skills</a></li>
 					<li><a href="edukasi.html"><span class="glyphicon glyphicon-file"aria-hidden="true"></span>Edukasi</a></li>
 					<li><a href="print.html"><span class="glyphicon glyphicon-print" aria-hidden="true"></span>Print CV</a></li>
 					<li><a href="fotoupload.html"><span class="glyphicon glyphicon-picture"aria-hidden="true"></span>Upload Foto</a></li>
@@ -139,8 +140,41 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					}
 				});
 			</script>
-
 			<div class="skills">
+				<h3 class="clr2">Professional Skills</h3>
+			</div>
+
+			<script>
+				$(document).ready(function () {
+					const jmlKategori = localStorage.getItem("jmlKategori");
+					const jmlSkill = localStorage.getItem("jmlSkill");
+
+					for (var j = 0; j < jmlSkill; j++)  {
+						$(".skills").after(`
+						<div class=skill_list>
+							<li><span id="namaskill"></span><li>
+						</div>
+						`)
+						const namaskill = localStorage.getItem("namaskill-" + j);
+						console.log(namaskill);
+						document.getElementById("namaskill").textContent = namaskill;	
+					}
+						for (var i = 0; i < jmlKategori; i++) {
+						$(".skills").after(`
+						<div class=skill_list>
+							<div class=skill1>
+								<h4><b><span id="namakategori"></span></b><h4>
+							</div>
+						</div>
+						`)
+						const namakategori = localStorage.getItem("namakategori-" + i);
+						console.log(namakategori);
+						document.getElementById("namakategori").textContent = namakategori;
+					};
+					});
+			</script>
+			
+			<!-- <div class="skills">
 				<h3 class="clr2">Professional Skill</h3>
 				<div class="skill_info">
 					<p>Duis egestas tortor metus, vitae venenatis tortor tristique at. Pellentesque dignissim purus
@@ -169,8 +203,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					</div>
 					<div class="clearfix"></div>
 				</div>
-			</div>
-			
+			</div> -->
+				<br>
 				<div class="education">
 					<h3 class="clr1">Riwayat Edukasi</h3>
 				</div>
