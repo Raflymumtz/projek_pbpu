@@ -71,20 +71,22 @@
 					</form>
 
 				    <div class="copy-kategori hide">
-                        <div class="control-group">
+                        <div class="control-groupkt">
                             <label>Nama Kategori</label>
                             <br>
                             <!-- id diganti class -->
                             <input type="text" value="Nama Kategori" class="form-control namakategori" onfocus="this.value='';"
                               onblur="if (this.value == '') {this.value ='Contoh : Software';}">
+							<button class="btn btn-danger removekt" type="button"><i class="glyphicon glyphicon-remove"></i> Remove</button>
                         </div>
                     </div>
 
                     <div class="copy-skills hide">
-                        <div class="control-group">
+                        <div class="control-grouprc">
 							<label>Rincian Skill yang Dimiliki</label>
 							<input type="text" value="Rincian Skill yang Dimiliki" class="form-control namaskill" onfocus="this.value='';"
 							onblur="if (this.value == '') {this.value ='Contoh : Figma';}">
+							<button class="btn btn-danger removerc" type="button"><i class="glyphicon glyphicon-remove"></i> Remove</button>
                         </div>
                     </div>
                           
@@ -100,14 +102,15 @@
 			var kategori = 1;
 			$( document ).ready(function() {
 			$(".add-more-categories").click(function(){ 
-				var html = $(".copy-kategori").html();
-				$(".after-add-more-categories").after(html);
+				var htmlk = $(".copy-kategori").html();
+				$(".after-add-more-categories").after(htmlk);
 				kategori++;
 			});
 				// saat tombol remove dklik control group akan dihapus 
-				$("body").on("click", ".remove", function () {
-					$(this).parents(".control-group").remove();
+				$("body").on("click", ".removekt", function () {
+					$(this).parents(".control-groupkt").remove();
 				});
+
 			});
 		</script>
 
@@ -116,13 +119,13 @@
 			var skill = 1;
 			$( document ).ready(function() {
 			$(".add-more-skills").click(function(){ 
-				var html = $(".copy-skills").html();
-				$(".after-add-more-skills").after(html);
+				var htmls = $(".copy-skills").html();
+				$(".after-add-more-skills").after(htmls);
 				skill++;
 			});
 				// saat tombol remove dklik control group akan dihapus 
-				$("body").on("click", ".remove", function () {
-					$(this).parents(".control-group").remove();
+				$("body").on("click", ".removerc", function () {
+					$(this).parents(".control-grouprc").remove();
 				});
 			});
 		</script>
@@ -138,6 +141,8 @@
                     for (var i = 0; i < kategori; i++) {
                         const kategoriValue = $(".namakategori").eq(i).val();
                         localStorage.setItem('namakategori-' + i, kategoriValue);
+						
+						console.log(localStorage.getItem('namakategori-' + i, kategoriValue));
                     }
                     for (var j = 0; j < skill; j++) {
                         const skillValue = $(".namaskill").eq(j).val();
